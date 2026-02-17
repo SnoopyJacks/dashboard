@@ -26,8 +26,12 @@
         <header class="topbar">
           <h1>Dashboard</h1>
           <div class="user">
-            <input type="text" placeholder="Search..." />
-            <button>Search</button>
+            <input
+              type="text"
+              placeholder="Search..."
+              aria-label="Search dashboard"
+            />
+            <button type="button">Search</button>
           </div>
         </header>
         <!--Dashboard Stats Cards-->
@@ -59,7 +63,7 @@
         <section class="charts">
           <div class="chart">
             <h4>Revenue Overview</h4>
-            <svg viewbox="0 0 400 200" class="line-chart">
+            <svg viewBox="0 0 400 200" class="line-chart">
               <polyline
                 points="0,150 50,120 100,130 150,90 200,100 250,80 300,60 350,40 400,30"
               />
@@ -78,7 +82,7 @@
         </section>
         <!--Table-->
         <section class="table-section">
-          <h4>Recent Acivity</h4>
+          <h4>Recent Activity</h4>
           <table>
             <thead>
               <tr>

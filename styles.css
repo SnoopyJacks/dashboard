@@ -167,7 +167,7 @@ body {
 .bar-chart span {
   flex: 1;
   background: var(--accent);
-  border-radius: 6pc 6px 0 0;
+  border-radius: 6px 6px 0 0;
 }
 
 /*Table*/
@@ -218,4 +218,51 @@ th {
 .failed {
   background: #fee2e2;
   color: #991b1b;
+}
+
+/*Responsive*/
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .sidebar nav a {
+    margin-bottom: 0;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+  
+@media (max-width: 520px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .user input {
+    width: 100px;
+  }
 }
