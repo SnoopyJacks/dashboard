@@ -271,6 +271,35 @@ th {
   color: #991b1b;
 }
 
+.axis {
+  stroke: #475569;
+  stroke-width: 2px;
+}
+
+.grid-lines line {
+  stroke: #e2e8f0;
+  stroke-width: 1px;
+}
+
+.axis-labels {
+  fill: #475569;
+  font-size: 12px;
+}
+
+.revenue-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.data-points circle {
+  fill: var(--accent);
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
 /*Responsive*/
 @media (max-width: 900px) {
   .dashboard {
