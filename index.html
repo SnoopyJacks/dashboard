@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <meta name="description" content="View revenue, users, conversions, growth, and recent account activity in the Dash business dashboard." />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Business Dashboard Overview | Dash</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Dashboard Container -->
     <div class="dashboard">
       <!--Sidebar Navigation-->
       <aside class="sidebar">
-        <h2 class="logo">Dash</h2>
-        <nav>
-          <a class="active" href="index.html">Dashboard</a>
+        <p class="logo" aria-label="Dash home">Dash</h2>
+        <nav aria-label="Primary navigation">
+          <a class="active" href="index.html" aria-current="page">Dashboard</a>
           <a href="reports.html">Reports</a>
           <a href="analytics.html">Analytics</a>
           <a href="settings.html">Settings</a>
@@ -21,57 +24,64 @@
       </aside>
 
       <!--Main Content Area-->
-      <main class="main">
+      <main class="main" id="main-content">
         <!--Main Header-->
         <header class="topbar">
           <h1>Dashboard</h1>
-          <div class="user">
+          <form class="user" role="search">
+            <label class="sr-only" for="dashboard-search">Search dashboard</label>
             <input
-              type="text"
-              placeholder="Search..."
-              aria-label="Search dashboard"
+              id="dashboard-search"
+              type="search"
+              placeholder="Search dashboard"
+              name="query"
             />
-            <button type="button">Search</button>
-          </div>
+            <button type="submit">Search</button>
+          </form>
         </header>
         <!--Dashboard Stats Cards-->
-        <section class="stats">
+        <section class="stats" aria-labelledby="summary-heading">
+          <h2 class="sr-only" id="summary-heading">Performance summary</h2>
           <!--Individual Cards-->
           <div class="card">
             <p class="label">Revenue</p>
-            <h3>$50,900</h3>
-            <span class="positive">+12%</span>
+            <p class="metric">$50,900</p>
+            <span class="positive" aria-label="Increased by 12 percent">+12%</span>
           </div>
           <div class="card">
             <p class="label">Users</p>
-            <h3>500</h3>
-            <span class="positive">+1%</span>
+            <p class=" metric">500</h3>
+            <span class="positive" aria-label="Increased by 1 percent">+1%</span>
           </div>
           <div class="card">
             <p class="label">Conversions</p>
-            <h3>1,563</h3>
-            <span class="negative">-1.2%</span>
+            <p class="metric">1,563</p>
+            <span class="negative" aria-label="Decreased by 1.2 percent">-1.2%</span>
           </div>
           <div class="card">
             <p class="label">Growth</p>
-            <h3>13%</h3>
-            <span class="positive">+3%</span>
+            <p class="metric">13%</p>
+            <span class="positive" aria-label="Increased by 3 percent">+3%</span>
           </div>
         </section>
 
         <!--Charts-->
-        <section class="charts">
+        <section class="charts" aria-labelledby="charts-heading">
+          <h2 class="sr-only" id="charts-heading">Performance charts</h2>
           <div class="chart">
-            <h4>Revenue Overview</h4>
-            <svg viewBox="0 0 400 200" class="line-chart">
+            <h3>Revenue Overview</h3>
+            <svg viewBox="0 0 400 200" class="line-chart" role="img" aria-labelledby="revenue-chart title revenue-chart-desc">
+              <title  id="revenue-chart-title">Revenue Overview Line Chart</title>
+              <desc id="revenue-chart-desc">Revenue trends upward overall across nine data points</desc>
               <polyline
                 points="0,150 50,120 100,130 150,90 200,100 250,80 300,60 350,40 400,30"
               />
             </svg>
           </div>
           <div class="chart">
-            <h4>User Growth</h4>
-            <div class="bar-chart">
+            <h3>User Growth</h3>
+            <p class="sr-only">User growth values for periods 1 through 5: 40, 60, 55, 80, and 70 percent.</p>
+            <div class="bar-chart" aria-hidden="true">
               <span style="height: 40%">1</span>
               <span style="height: 60%">2</span>
               <span style="height: 55%">3</span>
@@ -81,38 +91,42 @@
           </div>
         </section>
         <!--Table-->
-        <section class="table-section">
-          <h4>Recent Activity</h4>
+        <section class="table-section" aria-labelledby="activity-heading">
+          <h2 id="activity-heading">Recent Activity</h2>
+          <div class="table-wrapper" tabindex="0" role="region" aria-label="Recent activity table" aria-describedby="table-scroll-note">
+            <p class="sr-only" id="table-scroll-note">Scroll horizontally to view all columns on small screens.</p>
           <table>
+            <caption class="sr-only">Recent user account activity and status</caption>
             <thead>
               <tr>
-                <th>User</th>
-                <th>Action</th>
-                <th>Date</th>
-                <th>Status</th>
+                <th scope="col">User</th>
+                <th scope="col">Action</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Jane Cooper</td>
                 <td>Subscription</td>
-                <td>Feb 5, 2026</td>
+                <td><time datetime="2026-02-05">Feb 5, 2026</time></td>
                 <td><span class="badge success">Completed</span></td>
               </tr>
               <tr>
                 <td>John Smith</td>
                 <td>Payment</td>
-                <td>Feb 7, 2026</td>
+                <td><time datetime="2026-02-07">Feb 7, 2026</time></td>
                 <td><span class="badge pending">Pending</span></td>
               </tr>
               <tr>
                 <td>Amy Wilson</td>
                 <td>Refund</td>
-                <td>Feb 6, 2026</td>
+                <td><time datetime="2026-02-06">Feb 6, 2026</time></td>
                 <td><span class="badge failed">Failed</span></td>
               </tr>
             </tbody>
           </table>
+          </div>
         </section>
       </main>
     </div>
