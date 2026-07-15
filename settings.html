@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings</title>
+    <meta name="description" content="Manage your Dash account profile and personal preferences." />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Account Settings | Dash</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="dashboard">
       <aside class="sidebar">
-        <h2 class="logo">Dash</h2>
-        <nav>
+        <p class="logo" aria-label="Dash home">Dash</p>
+        <nav aria-label="Primary navigation">
           <a href="index.html">Dashboard</a>
           <a href="reports.html">Reports</a>
           <a href="analytics.html">Analytics</a>
-          <a class="active" href="settings.html">Settings</a>
+          <a class="active" href="settings.html" aria-current="page">Settings</a>
         </nav>
       </aside>
 
-      <main class="main">
+      <main class="main" id="main-content">
         <header class="topbar">
           <h1>Settings</h1>
         </header>
         <!--Account-->
-        <section class="card">
-          <h3>Account</h3>
+        <section class="card" aria-labelledby="account-heading">
+          <h2 id="account-heading">Account</h2>
           <p class="label">Manage your profile and preferences</p>
           <p><strong>Email:</strong> user@example.com</p>
           <p><strong>Username:</strong> user123</p>

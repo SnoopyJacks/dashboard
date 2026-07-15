@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports</title>
+  <meta name="description" content="Explore monthly revenue trends and business performance reports in Dash." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Revenue Reports | Dash</title>
   <link rel="stylesheet" href="styles.css">
 </head>
   <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <!-- Dashboard Container -->
   <div class="dashboard">
     <!--Sidebar Navigation-->
     <aside class="sidebar">
-      <h2 class="logo">Dash</h2>
-      <nav>
+      <p class="logo" aria-label="Dash home">Dash</p>
+      <nav aria-label="Primary navigation">
         <a href="index.html">Dashboard</a>
-        <a class="active" href="reports.html">Reports</a>
+        <a class="active" href="reports.html" aria-current="page">Reports</a>
         <a href="analytics.html">Analytics</a>
         <a href="settings.html">Settings</a>
       </nav>
     </aside>
 <!--Main Content Area-->
-    <main class="main">
+    <main class="main" id="main-content">
       <header class="topbar">
         <h1>Reports</h1>
       </header>
 <!--Charts-->
-  <section class="charts">
+  <section class="charts" aria-labelledby="reports-charts-heading">
+    <h2 class="sr-only" id="reports-charts-heading">Report charts</h2>
     <div class="chart">
-      <h4>Monthly Revenue</h4>
-        <svg viewBox="0 0 300 120" class="line chart">
+      <h3>Monthly Revenue</h3>
+        <svg viewBox="0 0 300 120" class="line-chart" role="img" aria-labelledby="monthly-revenue-title monthly-revenue-desc">
+          <title id="monthly-revenue-title">Monthly revenue line chart</title>
+          <desc id="monthly-revenue-desc">Monthly revenue rises steadily across seven data points.</desc>
           <polyline points="0,100 50,80 100,60 150,40 200,20 250,10 300,5" />
         </svg>
       </div>
     </section>
   </main>
+  </div>
   </body>
 </html>
